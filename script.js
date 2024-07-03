@@ -6,6 +6,11 @@ function fahrenheitAcelsius (fahrenheit) {
     return (fahrenheit - 32) * 0.555;
 } 
 
+function decimales (numero) {
+    return numero.toLocaleString('es-AR', { minimunFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+
 function operacion () {
     
     let opciones = prompt(`¿Qué quieres hacer? \n 1): Pasar de Celsius a Fahrenheit \n 2): Pasar de Fahrenheit a Celsius \n 3): Esplicacion de los calculos`)
@@ -17,7 +22,7 @@ function operacion () {
             alert(`Por favor ingrese una temperatura valida`);
         } else {
             let fahrenheit = celsiusAfahrenheit (celsius);
-            alert (`El resultado de la operacion ${celsius} grados celsius a fahrenheit es igual a: \n ${fahrenheit} grados fahrenheit`);
+            alert (`El resultado de la operacion ${decimales(celsius)} grados celsius a fahrenheit es igual a: \n ${decimales(fahrenheit)} grados fahrenheit`);
 
             volver ();
         }
@@ -28,7 +33,7 @@ function operacion () {
             alert(`Por favor ingrese una temperatura valida`);
         } else {
             let celsius = fahrenheitAcelsius (fahrenheit);
-            alert (`El resultado de la operacion ${fahrenheit} grados fahrenheit a celsius es igual a: \n ${celsius} grados celsuis`); 
+            alert (`El resultado de la operacion ${decimales(fahrenheit)} grados fahrenheit a celsius es igual a: \n ${decimales(celsius)} grados celsuis`); 
 
             volver ();
         } 
